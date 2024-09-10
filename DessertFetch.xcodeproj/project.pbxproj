@@ -14,6 +14,9 @@
 		1B0E449C2C8E547200B187C9 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E449B2C8E547100B187C9 /* NetworkLayer.swift */; };
 		1B0E449E2C8E565300B187C9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E449D2C8E565300B187C9 /* ViewModel.swift */; };
 		1B0E44A02C8E57A100B187C9 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E449F2C8E57A100B187C9 /* MealDetailView.swift */; };
+		1B0E44A32C8FD9C400B187C9 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44A22C8FD9C400B187C9 /* Meal.swift */; };
+		1B0E44A52C8FDAA500B187C9 /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44A42C8FDAA500B187C9 /* MealDetail.swift */; };
+		1B0E44A72C8FDBF800B187C9 /* MealResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44A62C8FDBF800B187C9 /* MealResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		1B0E449B2C8E547100B187C9 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		1B0E449D2C8E565300B187C9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		1B0E449F2C8E57A100B187C9 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
+		1B0E44A22C8FD9C400B187C9 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		1B0E44A42C8FDAA500B187C9 /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
+		1B0E44A62C8FDBF800B187C9 /* MealResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +64,13 @@
 			isa = PBXGroup;
 			children = (
 				1B0E448D2C8E3EB900B187C9 /* DessertFetchApp.swift */,
-				1B0E448F2C8E3EB900B187C9 /* DessertMainView.swift */,
-				1B0E449F2C8E57A100B187C9 /* MealDetailView.swift */,
-				1B0E449B2C8E547100B187C9 /* NetworkLayer.swift */,
-				1B0E449D2C8E565300B187C9 /* ViewModel.swift */,
+				1B0E44AA2C8FDE6F00B187C9 /* Views */,
+				1B0E44A92C8FDE5500B187C9 /* Network */,
+				1B0E44A82C8FDD6500B187C9 /* MealViewModel */,
+				1B0E44A12C8FD70200B187C9 /* Model */,
 				1B0E44912C8E3EBD00B187C9 /* Assets.xcassets */,
 				1B0E44932C8E3EBD00B187C9 /* Preview Content */,
+				1B0E44AB2C8FDEAE00B187C9 /* Tests */,
 			);
 			path = DessertFetch;
 			sourceTree = "<group>";
@@ -74,6 +81,48 @@
 				1B0E44942C8E3EBD00B187C9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1B0E44A12C8FD70200B187C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B0E44A22C8FD9C400B187C9 /* Meal.swift */,
+				1B0E44A42C8FDAA500B187C9 /* MealDetail.swift */,
+				1B0E44A62C8FDBF800B187C9 /* MealResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1B0E44A82C8FDD6500B187C9 /* MealViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1B0E449D2C8E565300B187C9 /* ViewModel.swift */,
+			);
+			path = MealViewModel;
+			sourceTree = "<group>";
+		};
+		1B0E44A92C8FDE5500B187C9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1B0E449B2C8E547100B187C9 /* NetworkLayer.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1B0E44AA2C8FDE6F00B187C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B0E448F2C8E3EB900B187C9 /* DessertMainView.swift */,
+				1B0E449F2C8E57A100B187C9 /* MealDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1B0E44AB2C8FDEAE00B187C9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +198,10 @@
 				1B0E449C2C8E547200B187C9 /* NetworkLayer.swift in Sources */,
 				1B0E44902C8E3EB900B187C9 /* DessertMainView.swift in Sources */,
 				1B0E449E2C8E565300B187C9 /* ViewModel.swift in Sources */,
+				1B0E44A72C8FDBF800B187C9 /* MealResponse.swift in Sources */,
+				1B0E44A52C8FDAA500B187C9 /* MealDetail.swift in Sources */,
 				1B0E44A02C8E57A100B187C9 /* MealDetailView.swift in Sources */,
+				1B0E44A32C8FD9C400B187C9 /* Meal.swift in Sources */,
 				1B0E448E2C8E3EB900B187C9 /* DessertFetchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

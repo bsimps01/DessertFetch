@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 protocol NetworkingProtocol {
     func fetchData(from url: URL) async throws -> Data
 }

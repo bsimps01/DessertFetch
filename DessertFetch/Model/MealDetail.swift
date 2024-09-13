@@ -34,14 +34,15 @@ struct MealDetail: Codable {
             let ingredientKey = DynamicCodingKeys(stringValue: "strIngredient\(i)")!
             let measureKey = DynamicCodingKeys(stringValue: "strMeasure\(i)")!
             
-            if let ingredient = try rawContainer.decodeIfPresent(String.self, forKey: ingredientKey),
-               let measure = try rawContainer.decodeIfPresent(String.self, forKey: measureKey),
-               !ingredient.isEmpty, !measure.isEmpty {
-                tempIngredients[ingredient] = measure
+            guard let ingredient = try rawContainer.decodeIfPresent(String.self, forKey: ingredientKey),
+                  let measure = try rawContainer.decodeIfPresent(String.self, forKey: measureKey),
+                  !ingredient.isEmpty, !measure.isEmpty else {
+                break // Stops the loop if no more ingredients or measurements are found
             }
+            tempIngredients[ingredient] = measure // stores the ingredient with the corresponding measurement
         }
         
-        self.ingredients = tempIngredients
+        self.ingredients = tempIngredients // takes the temporary dictionary of ingredient-measurement pairs and stores it into the ingredients property of the MealDetail struct
     }
     
     struct DynamicCodingKeys: CodingKey {

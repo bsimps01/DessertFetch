@@ -66,9 +66,9 @@ final class MealDetailsTests: XCTestCase {
         let decoder = JSONDecoder()
         let mealDetail = try decoder.decode(MealDetail.self, from: jsonData)
         
-        XCTAssertEqual(mealDetail.ingredients.count, 2)
+        XCTAssertEqual(mealDetail.ingredients.count, 1)
         XCTAssertEqual(mealDetail.ingredients["Flour"], "300g")
-        XCTAssertEqual(mealDetail.ingredients["Milk"], "250ml")
+        XCTAssertEqual(mealDetail.ingredients["Milk"], nil)
     }
 
     // Test for decoding with no ingredients

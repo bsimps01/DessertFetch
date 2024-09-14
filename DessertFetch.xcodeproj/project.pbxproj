@@ -36,6 +36,13 @@
 			remoteGlobalIDString = 1B0E44892C8E3EB900B187C9;
 			remoteInfo = DessertFetch;
 		};
+		1B0E44D22C954FAF00B187C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0E44822C8E3EB900B187C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B0E44892C8E3EB900B187C9;
+			remoteInfo = DessertFetch;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +61,7 @@
 		1B0E44B62C94194800B187C9 /* MealDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsTests.swift; sourceTree = "<group>"; };
 		1B0E44C12C941E7300B187C9 /* MealServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0E44C32C941E7300B187C9 /* MealServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealServiceTests.swift; sourceTree = "<group>"; };
+		1B0E44CE2C954FAE00B187C9 /* MealServiceTests2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealServiceTests2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1B0E44BE2C941E7300B187C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B0E44CB2C954FAE00B187C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -97,6 +112,7 @@
 				1B0E448A2C8E3EB900B187C9 /* DessertFetch.app */,
 				1B0E44B42C94194800B187C9 /* DessertFetchTests.xctest */,
 				1B0E44C12C941E7300B187C9 /* MealServiceTests.xctest */,
+				1B0E44CE2C954FAE00B187C9 /* MealServiceTests2.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,6 +246,24 @@
 			productReference = 1B0E44C12C941E7300B187C9 /* MealServiceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		1B0E44CD2C954FAE00B187C9 /* MealServiceTests2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B0E44D42C954FAF00B187C9 /* Build configuration list for PBXNativeTarget "MealServiceTests2" */;
+			buildPhases = (
+				1B0E44CA2C954FAE00B187C9 /* Sources */,
+				1B0E44CB2C954FAE00B187C9 /* Frameworks */,
+				1B0E44CC2C954FAE00B187C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B0E44D32C954FAF00B187C9 /* PBXTargetDependency */,
+			);
+			name = MealServiceTests2;
+			productName = MealServiceTests2;
+			productReference = 1B0E44CE2C954FAE00B187C9 /* MealServiceTests2.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -251,6 +285,10 @@
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 1B0E44892C8E3EB900B187C9;
 					};
+					1B0E44CD2C954FAE00B187C9 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 1B0E44892C8E3EB900B187C9;
+					};
 				};
 			};
 			buildConfigurationList = 1B0E44852C8E3EB900B187C9 /* Build configuration list for PBXProject "DessertFetch" */;
@@ -269,6 +307,7 @@
 				1B0E44892C8E3EB900B187C9 /* DessertFetch */,
 				1B0E44B32C94194800B187C9 /* DessertFetchTests */,
 				1B0E44C02C941E7300B187C9 /* MealServiceTests */,
+				1B0E44CD2C954FAE00B187C9 /* MealServiceTests2 */,
 			);
 		};
 /* End PBXProject section */
@@ -291,6 +330,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1B0E44BF2C941E7300B187C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B0E44CC2C954FAE00B187C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -331,6 +377,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1B0E44CA2C954FAE00B187C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -343,6 +396,11 @@
 			isa = PBXTargetDependency;
 			target = 1B0E44892C8E3EB900B187C9 /* DessertFetch */;
 			targetProxy = 1B0E44C52C941E7300B187C9 /* PBXContainerItemProxy */;
+		};
+		1B0E44D32C954FAF00B187C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B0E44892C8E3EB900B187C9 /* DessertFetch */;
+			targetProxy = 1B0E44D22C954FAF00B187C9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -596,6 +654,42 @@
 			};
 			name = Release;
 		};
+		1B0E44D52C954FAF00B187C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4KT624V79W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benjamin5311.MealServiceTests2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DessertFetch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DessertFetch";
+			};
+			name = Debug;
+		};
+		1B0E44D62C954FAF00B187C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4KT624V79W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benjamin5311.MealServiceTests2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DessertFetch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DessertFetch";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -631,6 +725,15 @@
 			buildConfigurations = (
 				1B0E44C82C941E7300B187C9 /* Debug */,
 				1B0E44C92C941E7300B187C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B0E44D42C954FAF00B187C9 /* Build configuration list for PBXNativeTarget "MealServiceTests2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B0E44D52C954FAF00B187C9 /* Debug */,
+				1B0E44D62C954FAF00B187C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -11,7 +11,7 @@
 		1B0E44902C8E3EB900B187C9 /* DessertMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E448F2C8E3EB900B187C9 /* DessertMainView.swift */; };
 		1B0E44922C8E3EBD00B187C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0E44912C8E3EBD00B187C9 /* Assets.xcassets */; };
 		1B0E44952C8E3EBD00B187C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0E44942C8E3EBD00B187C9 /* Preview Assets.xcassets */; };
-		1B0E449C2C8E547200B187C9 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E449B2C8E547100B187C9 /* NetworkLayer.swift */; };
+		1B0E449C2C8E547200B187C9 /* initialNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E449B2C8E547100B187C9 /* initialNetworkLayer.swift */; };
 		1B0E449E2C8E565300B187C9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E449D2C8E565300B187C9 /* ViewModel.swift */; };
 		1B0E44A02C8E57A100B187C9 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E449F2C8E57A100B187C9 /* MealDetailView.swift */; };
 		1B0E44A32C8FD9C400B187C9 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44A22C8FD9C400B187C9 /* Meal.swift */; };
@@ -19,6 +19,12 @@
 		1B0E44A72C8FDBF800B187C9 /* MealResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44A62C8FDBF800B187C9 /* MealResponse.swift */; };
 		1B0E44B72C94194800B187C9 /* MealDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44B62C94194800B187C9 /* MealDetailsTests.swift */; };
 		1B0E44C42C941E7300B187C9 /* MealServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44C32C941E7300B187C9 /* MealServiceTests.swift */; };
+		1B0E44D82C95755A00B187C9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44D72C95755A00B187C9 /* Endpoint.swift */; };
+		1B0E44DA2C9575BD00B187C9 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44D92C9575BD00B187C9 /* HTTPMethod.swift */; };
+		1B0E44DC2C95EFB400B187C9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44DB2C95EFB400B187C9 /* RequestError.swift */; };
+		1B0E44DE2C95F01700B187C9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44DD2C95F01700B187C9 /* HTTPClient.swift */; };
+		1B0E44E02C96C7AD00B187C9 /* MealsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44DF2C96C7AD00B187C9 /* MealsEndpoint.swift */; };
+		1B0E44E22C96C7E400B187C9 /* MealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44E12C96C7E400B187C9 /* MealService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +57,7 @@
 		1B0E448F2C8E3EB900B187C9 /* DessertMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertMainView.swift; sourceTree = "<group>"; };
 		1B0E44912C8E3EBD00B187C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B0E44942C8E3EBD00B187C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1B0E449B2C8E547100B187C9 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		1B0E449B2C8E547100B187C9 /* initialNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialNetworkLayer.swift; sourceTree = "<group>"; };
 		1B0E449D2C8E565300B187C9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		1B0E449F2C8E57A100B187C9 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 		1B0E44A22C8FD9C400B187C9 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
@@ -62,6 +68,12 @@
 		1B0E44C12C941E7300B187C9 /* MealServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0E44C32C941E7300B187C9 /* MealServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealServiceTests.swift; sourceTree = "<group>"; };
 		1B0E44CE2C954FAE00B187C9 /* MealServiceTests2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealServiceTests2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B0E44D72C95755A00B187C9 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		1B0E44D92C9575BD00B187C9 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		1B0E44DB2C95EFB400B187C9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		1B0E44DD2C95F01700B187C9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		1B0E44DF2C96C7AD00B187C9 /* MealsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsEndpoint.swift; sourceTree = "<group>"; };
+		1B0E44E12C96C7E400B187C9 /* MealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +172,13 @@
 		1B0E44A92C8FDE5500B187C9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				1B0E449B2C8E547100B187C9 /* NetworkLayer.swift */,
+				1B0E449B2C8E547100B187C9 /* initialNetworkLayer.swift */,
+				1B0E44D72C95755A00B187C9 /* Endpoint.swift */,
+				1B0E44D92C9575BD00B187C9 /* HTTPMethod.swift */,
+				1B0E44DB2C95EFB400B187C9 /* RequestError.swift */,
+				1B0E44DD2C95F01700B187C9 /* HTTPClient.swift */,
+				1B0E44DF2C96C7AD00B187C9 /* MealsEndpoint.swift */,
+				1B0E44E12C96C7E400B187C9 /* MealService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -350,13 +368,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B0E449C2C8E547200B187C9 /* NetworkLayer.swift in Sources */,
+				1B0E449C2C8E547200B187C9 /* initialNetworkLayer.swift in Sources */,
+				1B0E44D82C95755A00B187C9 /* Endpoint.swift in Sources */,
+				1B0E44DE2C95F01700B187C9 /* HTTPClient.swift in Sources */,
 				1B0E44902C8E3EB900B187C9 /* DessertMainView.swift in Sources */,
+				1B0E44DC2C95EFB400B187C9 /* RequestError.swift in Sources */,
 				1B0E449E2C8E565300B187C9 /* ViewModel.swift in Sources */,
 				1B0E44A72C8FDBF800B187C9 /* MealResponse.swift in Sources */,
 				1B0E44A52C8FDAA500B187C9 /* MealDetail.swift in Sources */,
+				1B0E44E22C96C7E400B187C9 /* MealService.swift in Sources */,
 				1B0E44A02C8E57A100B187C9 /* MealDetailView.swift in Sources */,
 				1B0E44A32C8FD9C400B187C9 /* Meal.swift in Sources */,
+				1B0E44DA2C9575BD00B187C9 /* HTTPMethod.swift in Sources */,
+				1B0E44E02C96C7AD00B187C9 /* MealsEndpoint.swift in Sources */,
 				1B0E448E2C8E3EB900B187C9 /* DessertFetchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

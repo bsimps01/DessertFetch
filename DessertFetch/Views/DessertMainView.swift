@@ -12,7 +12,7 @@ struct DessertMainView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.meals) { meal in
+            List(viewModel.dessertMeals) { meal in
                 NavigationLink(destination: MealDetailView(mealID: meal.idMeal)) {
                     HStack {
                         // Display the image using AsyncImage

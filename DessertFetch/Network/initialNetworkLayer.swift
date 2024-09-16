@@ -7,6 +7,8 @@
 
 import Foundation
 
+// This is one way to call the json data, no calls are being made through here with the final network layer
+
 protocol NetworkingProtocol {
     func fetchData(from url: URL) async throws -> Data
 }
@@ -27,14 +29,14 @@ class MealService {
         self.networking = networking
     }
     
-    func fetchDessertMeals() async throws -> [Meal] {
+    func getDessertMeals() async throws -> [Meal] {
         guard let url = URL(string: dessertURL) else { throw URLError(.badURL) }
         let data = try await networking.fetchData(from: url)
         let decodedResponse = try JSONDecoder().decode(MealsResponse.self, from: data)
         return decodedResponse.meals.sorted { $0.strMeal < $1.strMeal }
     }
     
-    func fetchMealDetail(by id: String) async throws -> MealDetail {
+    func getMealDetail(by id: String) async throws -> MealDetail {
         guard let url = URL(string: lookupURL + id) else { throw URLError(.badURL) }
         let data = try await networking.fetchData(from: url)
         let decodedResponse = try JSONDecoder().decode(MealDetailResponse.self, from: data)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MealDetailView: View {
     let mealID: String
-        @StateObject private var viewModel = MealViewModel()
+    @StateObject private var viewModel = MealViewModel()
         
         var body: some View {
             ScrollView {

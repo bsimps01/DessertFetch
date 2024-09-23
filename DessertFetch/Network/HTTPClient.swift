@@ -8,12 +8,16 @@
 import Foundation
 
 protocol HTTPClient {
-    func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type, session: URLSession) async -> Result<T, RequestError>
+    func sendRequest<T: Decodable>(endpoint: Endpoint,
+                                   responseModel: T.Type,
+                                   session: URLSession) async -> Result<T, RequestError>
 }
 
 extension HTTPClient {
     
-    func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type, session: URLSession = .shared) async -> Result<T, RequestError> {
+    func sendRequest<T: Decodable>(endpoint: Endpoint,
+                                   responseModel: T.Type,
+                                   session: URLSession = .shared) async -> Result<T, RequestError> {
         do {
             let request = try endpoint.makeURLRequest()
             let (data, response) = try await URLSession.shared.data(for: request)

@@ -14,6 +14,7 @@ class MealViewModel: ObservableObject {
     @Published var errorMessage: String? // error message
     @Published var searchText: String = ""  // Search text entered by the user
     @Published var filteredDesserts: [Meal] = []  // Filtered list of meals
+    @Published var isLoading: Bool = false
 
     private let mealService = MealsService()
     private var cancellables = Set<AnyCancellable>()  // To store Combine subscriptions
@@ -36,9 +37,15 @@ class MealViewModel: ObservableObject {
     }
     
     func getDessertMeals() async {
+        
+        DispatchQueue.main.async {
+            self.isLoading = true
+        }
+        
         let result = await mealService.fetchDessertMeals()
 
         DispatchQueue.main.async {
+            self.isLoading = false
             switch result {
             case .success(let mealResponse):
                 self.dessertMeals = mealResponse.meals
@@ -49,16 +56,7 @@ class MealViewModel: ObservableObject {
         }
     }
     
-    // previous logic for sorting out meal service
-    
-//    do {
-//        let meals = try await mealService.fetchDessertMeals()
-//        self.meals = meals
-//    } catch {
-//        print("Error fetching dessert meals: \(error)")
-//    }
-//}
-    
+    //Meal Details
     func getMealDetail(id: String) async {
         let result = await mealService.fetchMealDetail(id: id)
 
@@ -72,12 +70,3 @@ class MealViewModel: ObservableObject {
             }
         }
 }
-
-// previous logic for sorting out meal detail service
-
-//do {
-//    let mealDetail = try await mealService.fetchMealDetail(by: id)
-//    self.selectedMealDetail = mealDetail
-//} catch {
-//    print("Error fetching meal detail: \(error)")
-//}

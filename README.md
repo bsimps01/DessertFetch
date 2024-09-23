@@ -28,7 +28,7 @@ DessertFetch/
 │   ├── Model/              # Data models (Meal, MealDetail, etc.)
 │   ├── MealViewModel/          # SwiftUI view models
 │   ├── Views/               # SwiftUI views
-│   ├── Networking/          # Network layer and API service
+│   ├── Network/          # Network layer and API service
 │   ├── Tests/               # Unit and UI tests
 │   ├── Resources/           # Assets, icons, etc.
 └── README.md                # Project documentation

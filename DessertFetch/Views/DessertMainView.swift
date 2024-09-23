@@ -12,37 +12,44 @@ struct DessertMainView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.dessertMeals) { meal in
-                NavigationLink(destination: MealDetailView(mealID: meal.idMeal)) {
-                    HStack {
-                        // Display the image using AsyncImage
-                        if let imageURL = meal.strMealThumb, let url = URL(string: imageURL) {
-                            AsyncImage(url: url) { image in
-                                image
+            
+            VStack {
+                // Search bar for filtering desserts
+                SearchBar(text: $viewModel.searchText)
+                
+                List(viewModel.filteredDesserts, id: \.idMeal) { meal in
+                    NavigationLink(destination: MealDetailView(mealID: meal.idMeal)) {
+                        HStack {
+                            // Display the image using AsyncImage
+                            if let imageURL = meal.strMealThumb,
+                                let url = URL(string: imageURL) {
+                                AsyncImage(url: url) { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 50, height: 50)
+                                        .cornerRadius(8)
+                                } placeholder: {
+                                    ProgressView()
+                                        .frame(width: 50, height: 50)
+                                }
+                            } else {
+                                // Display placeholder if no image is available
+                                Image(systemName: "photo")
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 50, height: 50)
                                     .cornerRadius(8)
-                            } placeholder: {
-                                ProgressView()
-                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(.gray)
                             }
-                        } else {
-                            // Display placeholder if no image is available
-                            Image(systemName: "photo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(8)
-                                .foregroundColor(.gray)
+                            
+                            // Display the meal name
+                            Text(meal.strMeal)
                         }
-                        
-                        // Display the meal name
-                        Text(meal.strMeal)
                     }
                 }
+                .navigationTitle("Desserts")
             }
-            .navigationTitle("Desserts")
             .task {
                 await viewModel.getDessertMeals()
             }

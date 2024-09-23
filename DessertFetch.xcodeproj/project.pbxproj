@@ -25,6 +25,8 @@
 		1B0E44DE2C95F01700B187C9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44DD2C95F01700B187C9 /* HTTPClient.swift */; };
 		1B0E44E02C96C7AD00B187C9 /* MealsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44DF2C96C7AD00B187C9 /* MealsEndpoint.swift */; };
 		1B0E44E22C96C7E400B187C9 /* MealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E44E12C96C7E400B187C9 /* MealService.swift */; };
+		1B4A0F752C9967F90032B17E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4A0F742C9967F90032B17E /* SearchBar.swift */; };
+		1B6312012C9E9BA800D2E074 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6312002C9E9BA800D2E074 /* MockURLProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +38,6 @@
 			remoteInfo = DessertFetch;
 		};
 		1B0E44C52C941E7300B187C9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B0E44822C8E3EB900B187C9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1B0E44892C8E3EB900B187C9;
-			remoteInfo = DessertFetch;
-		};
-		1B0E44D22C954FAF00B187C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1B0E44822C8E3EB900B187C9 /* Project object */;
 			proxyType = 1;
@@ -67,13 +62,14 @@
 		1B0E44B62C94194800B187C9 /* MealDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsTests.swift; sourceTree = "<group>"; };
 		1B0E44C12C941E7300B187C9 /* MealServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0E44C32C941E7300B187C9 /* MealServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealServiceTests.swift; sourceTree = "<group>"; };
-		1B0E44CE2C954FAE00B187C9 /* MealServiceTests2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealServiceTests2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0E44D72C95755A00B187C9 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		1B0E44D92C9575BD00B187C9 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		1B0E44DB2C95EFB400B187C9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		1B0E44DD2C95F01700B187C9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		1B0E44DF2C96C7AD00B187C9 /* MealsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsEndpoint.swift; sourceTree = "<group>"; };
 		1B0E44E12C96C7E400B187C9 /* MealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealService.swift; sourceTree = "<group>"; };
+		1B4A0F742C9967F90032B17E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		1B6312002C9E9BA800D2E074 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,13 +94,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B0E44CB2C954FAE00B187C9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -112,8 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				1B0E448C2C8E3EB900B187C9 /* DessertFetch */,
-				1B0E44B52C94194800B187C9 /* DessertFetchTests */,
-				1B0E44C22C941E7300B187C9 /* MealServiceTests */,
+				1B6311FF2C9E4AD600D2E074 /* DessertFetchTests */,
 				1B0E448B2C8E3EB900B187C9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,7 +112,6 @@
 				1B0E448A2C8E3EB900B187C9 /* DessertFetch.app */,
 				1B0E44B42C94194800B187C9 /* DessertFetchTests.xctest */,
 				1B0E44C12C941E7300B187C9 /* MealServiceTests.xctest */,
-				1B0E44CE2C954FAE00B187C9 /* MealServiceTests2.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,10 +160,10 @@
 			isa = PBXGroup;
 			children = (
 				1B0E449B2C8E547100B187C9 /* initialNetworkLayer.swift */,
-				1B0E44D72C95755A00B187C9 /* Endpoint.swift */,
-				1B0E44D92C9575BD00B187C9 /* HTTPMethod.swift */,
 				1B0E44DB2C95EFB400B187C9 /* RequestError.swift */,
+				1B0E44D92C9575BD00B187C9 /* HTTPMethod.swift */,
 				1B0E44DD2C95F01700B187C9 /* HTTPClient.swift */,
+				1B0E44D72C95755A00B187C9 /* Endpoint.swift */,
 				1B0E44DF2C96C7AD00B187C9 /* MealsEndpoint.swift */,
 				1B0E44E12C96C7E400B187C9 /* MealService.swift */,
 			);
@@ -188,6 +175,7 @@
 			children = (
 				1B0E448F2C8E3EB900B187C9 /* DessertMainView.swift */,
 				1B0E449F2C8E57A100B187C9 /* MealDetailView.swift */,
+				1B4A0F742C9967F90032B17E /* SearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +194,24 @@
 				1B0E44C32C941E7300B187C9 /* MealServiceTests.swift */,
 			);
 			path = MealServiceTests;
+			sourceTree = "<group>";
+		};
+		1B6311FC2C9E49BE00D2E074 /* TestNetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				1B6312002C9E9BA800D2E074 /* MockURLProtocol.swift */,
+			);
+			path = TestNetworkLayer;
+			sourceTree = "<group>";
+		};
+		1B6311FF2C9E4AD600D2E074 /* DessertFetchTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B0E44B52C94194800B187C9 /* DessertFetchTests */,
+				1B0E44C22C941E7300B187C9 /* MealServiceTests */,
+				1B6311FC2C9E49BE00D2E074 /* TestNetworkLayer */,
+			);
+			path = DessertFetchTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,24 +270,6 @@
 			productReference = 1B0E44C12C941E7300B187C9 /* MealServiceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1B0E44CD2C954FAE00B187C9 /* MealServiceTests2 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1B0E44D42C954FAF00B187C9 /* Build configuration list for PBXNativeTarget "MealServiceTests2" */;
-			buildPhases = (
-				1B0E44CA2C954FAE00B187C9 /* Sources */,
-				1B0E44CB2C954FAE00B187C9 /* Frameworks */,
-				1B0E44CC2C954FAE00B187C9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1B0E44D32C954FAF00B187C9 /* PBXTargetDependency */,
-			);
-			name = MealServiceTests2;
-			productName = MealServiceTests2;
-			productReference = 1B0E44CE2C954FAE00B187C9 /* MealServiceTests2.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -303,10 +291,6 @@
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 1B0E44892C8E3EB900B187C9;
 					};
-					1B0E44CD2C954FAE00B187C9 = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 1B0E44892C8E3EB900B187C9;
-					};
 				};
 			};
 			buildConfigurationList = 1B0E44852C8E3EB900B187C9 /* Build configuration list for PBXProject "DessertFetch" */;
@@ -325,7 +309,6 @@
 				1B0E44892C8E3EB900B187C9 /* DessertFetch */,
 				1B0E44B32C94194800B187C9 /* DessertFetchTests */,
 				1B0E44C02C941E7300B187C9 /* MealServiceTests */,
-				1B0E44CD2C954FAE00B187C9 /* MealServiceTests2 */,
 			);
 		};
 /* End PBXProject section */
@@ -354,13 +337,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B0E44CC2C954FAE00B187C9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -370,6 +346,8 @@
 			files = (
 				1B0E449C2C8E547200B187C9 /* initialNetworkLayer.swift in Sources */,
 				1B0E44D82C95755A00B187C9 /* Endpoint.swift in Sources */,
+				1B4A0F752C9967F90032B17E /* SearchBar.swift in Sources */,
+				1B6312012C9E9BA800D2E074 /* MockURLProtocol.swift in Sources */,
 				1B0E44DE2C95F01700B187C9 /* HTTPClient.swift in Sources */,
 				1B0E44902C8E3EB900B187C9 /* DessertMainView.swift in Sources */,
 				1B0E44DC2C95EFB400B187C9 /* RequestError.swift in Sources */,
@@ -401,13 +379,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B0E44CA2C954FAE00B187C9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -420,11 +391,6 @@
 			isa = PBXTargetDependency;
 			target = 1B0E44892C8E3EB900B187C9 /* DessertFetch */;
 			targetProxy = 1B0E44C52C941E7300B187C9 /* PBXContainerItemProxy */;
-		};
-		1B0E44D32C954FAF00B187C9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1B0E44892C8E3EB900B187C9 /* DessertFetch */;
-			targetProxy = 1B0E44D22C954FAF00B187C9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -678,42 +644,6 @@
 			};
 			name = Release;
 		};
-		1B0E44D52C954FAF00B187C9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4KT624V79W;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.benjamin5311.MealServiceTests2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DessertFetch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DessertFetch";
-			};
-			name = Debug;
-		};
-		1B0E44D62C954FAF00B187C9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4KT624V79W;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.benjamin5311.MealServiceTests2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DessertFetch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DessertFetch";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -749,15 +679,6 @@
 			buildConfigurations = (
 				1B0E44C82C941E7300B187C9 /* Debug */,
 				1B0E44C92C941E7300B187C9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1B0E44D42C954FAF00B187C9 /* Build configuration list for PBXNativeTarget "MealServiceTests2" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1B0E44D52C954FAF00B187C9 /* Debug */,
-				1B0E44D62C954FAF00B187C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

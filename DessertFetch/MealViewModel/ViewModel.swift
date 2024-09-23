@@ -6,13 +6,34 @@
 //
 
 import Foundation
+import Combine
 
 class MealViewModel: ObservableObject {
-    @Published var dessertMeals: [Meal] = []
-    @Published var selectedMealDetail: MealDetail?
-    @Published var errorMessage: String?
+    @Published var dessertMeals: [Meal] = [] // list of meals
+    @Published var selectedMealDetail: MealDetail? // meal detail
+    @Published var errorMessage: String? // error message
+    @Published var searchText: String = ""  // Search text entered by the user
+    @Published var filteredDesserts: [Meal] = []  // Filtered list of meals
 
     private let mealService = MealsService()
+    private var cancellables = Set<AnyCancellable>()  // To store Combine subscriptions
+    
+    init() {
+        // Bind searchText changes to the filteredDesserts array
+        $searchText
+            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
+            .removeDuplicates()
+            .map { searchText in
+                if searchText.isEmpty {
+                    return self.dessertMeals
+                } else {
+                    return self.dessertMeals.filter {
+                        $0.strMeal.lowercased().contains(searchText.lowercased())
+                    }
+                }
+            }
+            .assign(to: &$filteredDesserts)
+    }
     
     func getDessertMeals() async {
         let result = await mealService.fetchDessertMeals()
@@ -21,6 +42,7 @@ class MealViewModel: ObservableObject {
             switch result {
             case .success(let mealResponse):
                 self.dessertMeals = mealResponse.meals
+                self.filteredDesserts = mealResponse.meals  // Initially, all meals are shown
             case .failure(let error):
                 self.errorMessage = error.customMessage
             }
@@ -51,7 +73,7 @@ class MealViewModel: ObservableObject {
         }
 }
 
-// previous logic for sorting out meal service
+// previous logic for sorting out meal detail service
 
 //do {
 //    let mealDetail = try await mealService.fetchMealDetail(by: id)

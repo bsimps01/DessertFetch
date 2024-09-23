@@ -24,25 +24,27 @@ struct MealDetail: Codable {
         self.strInstructions = try container.decode(String.self, forKey: .strInstructions)
         self.strMealThumb = try container.decodeIfPresent(String.self, forKey: .strMealThumb)
         
-        let rawContainer = try decoder.container(keyedBy: DynamicCodingKeys.self)
-        
         var tempIngredients: [String: String] = [:]
         
-        let maxIngredients = 20  // Defined as a constant for easier maintenance
+        let dynamicContainer = try decoder.container(keyedBy: DynamicCodingKeys.self)
         
-        for i in 1...maxIngredients {
-            let ingredientKey = DynamicCodingKeys(stringValue: "strIngredient\(i)")!
-            let measureKey = DynamicCodingKeys(stringValue: "strMeasure\(i)")!
-            
-            guard let ingredient = try rawContainer.decodeIfPresent(String.self, forKey: ingredientKey),
-                  let measure = try rawContainer.decodeIfPresent(String.self, forKey: measureKey),
-                  !ingredient.isEmpty, !measure.isEmpty else {
-                break // Stops the loop if no more ingredients or measurements are found
+        // Dynamically iterate over all keys in the API response
+        for key in dynamicContainer.allKeys {
+            if key.stringValue.starts(with: "strIngredient") {
+                let index = key.stringValue.replacingOccurrences(of: "strIngredient", with: "")
+                let measureKey = DynamicCodingKeys(stringValue: "strMeasure\(index)")!
+
+                let ingredient = try dynamicContainer.decodeIfPresent(String.self, forKey: key) ?? ""
+                let measure = try dynamicContainer.decodeIfPresent(String.self, forKey: measureKey) ?? ""
+
+                // Only add non-empty ingredient and measurement
+                if !ingredient.isEmpty && !measure.isEmpty {
+                    tempIngredients[ingredient] = measure
+                }
             }
-            tempIngredients[ingredient] = measure // stores the ingredient with the corresponding measurement
         }
-        
-        self.ingredients = tempIngredients // takes the temporary dictionary of ingredient-measurement pairs and stores it into the ingredients property of the MealDetail struct
+
+        self.ingredients = tempIngredients
     }
     
     struct DynamicCodingKeys: CodingKey {

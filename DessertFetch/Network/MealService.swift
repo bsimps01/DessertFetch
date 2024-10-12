@@ -8,11 +8,7 @@
 import Foundation
 
 struct MealsService: HTTPClient {
-    let session: URLSession  // Inject URLSession
-
-    init(session: URLSession = .shared) {
-        self.session = session  // Use injected session or default to shared
-    }
+    let session: URLSession = .shared
 
     func fetchDessertMeals() async -> Result<MealsResponse, RequestError> {
         return await sendRequest(endpoint: MealsEndpoint.dessertMeals,

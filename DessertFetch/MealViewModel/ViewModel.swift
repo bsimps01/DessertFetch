@@ -15,6 +15,7 @@ class MealViewModel: ObservableObject {
     @Published var searchText: String = ""  // Search text entered by the user
     @Published var filteredDesserts: [Meal] = []  // Filtered list of meals
     @Published var isLoading: Bool = false
+    @Published var favoriteMeals: [Meal] = [] // List of favorite meals
 
     private let mealService = MealsService()
     private var cancellables = Set<AnyCancellable>()  // To store Combine subscriptions
@@ -69,4 +70,36 @@ class MealViewModel: ObservableObject {
                 }
             }
         }
+    
+    // Save favorite meal
+    func addMealToFavorites(_ meal: Meal) {
+        if !favoriteMeals.contains(where: { $0.idMeal == meal.idMeal }) {
+            favoriteMeals.append(meal)
+            saveFavoriteMeals()
+        }
+    }
+    
+    // Remove favorite meal
+    func removeMealFromFavorites(_ meal: Meal) {
+        if let index = favoriteMeals.firstIndex(where: { $0.idMeal == meal.idMeal }) {
+            favoriteMeals.remove(at: index)
+            saveFavoriteMeals()
+        }
+    }
+    
+    // Save favorite meals to UserDefaults
+    func saveFavoriteMeals() {
+        if let encoded = try? JSONEncoder().encode(favoriteMeals) {
+            UserDefaults.standard.set(encoded, forKey: "favoriteMeals")
+        }
+    }
+
+    // Load favorite meals from UserDefaults
+    func loadFavoriteMeals() {
+        if let savedMeals = UserDefaults.standard.object(forKey: "favoriteMeals") as? Data {
+            if let decodedMeals = try? JSONDecoder().decode([Meal].self, from: savedMeals) {
+                favoriteMeals = decodedMeals
+            }
+        }
+    }
 }
